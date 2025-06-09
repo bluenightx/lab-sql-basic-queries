@@ -4,7 +4,9 @@ USE sakila; #Select the database
 SHOW TABLES;
 
 #2 Retrieve all the data from the tables actor, film and customer.
-SELECT *FROM actor, film, customer;
+SELECT *FROM actor;
+SELECT *FROM film;
+SELECT *FROM customer;
 
 #3.1 Titles of all films from the film table
 SELECT title
@@ -23,11 +25,11 @@ SELECT DISTINCT release_year
 FROM film;
 
 #5.1 Determine the number of stores that the company has.
-SELECT COUNT(store_id)
+SELECT COUNT(DISTINCT store_id)
 FROM store;
 
 #5.2 Determine the number of employees that the company has.
-SELECT COUNT(staff_id)
+SELECT COUNT(DISTINCT staff_id)
 FROM staff;
 
 #5.3 Determine how many films are available for rent and how many have been rented.
@@ -44,7 +46,7 @@ FROM rental;
 
 
 #5.4 Determine the number of distinct last names of the actors in the database.
-SELECT DISTINCT COUNT(last_name)
+SELECT COUNT(DISTINCT last_name)
 FROM actor;
 
 #6 Retrieve the 10 longest films.
@@ -55,6 +57,5 @@ LIMIT 10;
 
 
 #7.1 Retrieve all actors with the first name "SCARLETT".
-SELECT first_name
-FROM actor
+SELECT *FROM actor
 WHERE first_name = "SCARLETT" ;
